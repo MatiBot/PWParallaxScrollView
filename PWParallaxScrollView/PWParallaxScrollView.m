@@ -33,7 +33,7 @@ static const NSInteger PWInvalidPosition = -1;
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self initControl];
+
     }
     return self;
 }
@@ -43,7 +43,7 @@ static const NSInteger PWInvalidPosition = -1;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initControl];
+
     }
     return self;
 }
@@ -111,7 +111,10 @@ static const NSInteger PWInvalidPosition = -1;
 }
 
 - (void)reloadData
-{
+  {
+    for (UIView* view in self.subviews) {
+      [view removeFromSuperview];
+    }
     self.backgroundViewIndex = 0;
     self.userHoldingDownIndex = 0;
     self.numberOfItems = [self.dataSource numberOfItemsInScrollView:self];
