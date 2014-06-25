@@ -115,6 +115,7 @@ static const NSInteger PWInvalidPosition = -1;
     for (UIView* view in self.subviews) {
       [view removeFromSuperview];
     }
+    [self initControl];
     self.backgroundViewIndex = 0;
     self.userHoldingDownIndex = 0;
     self.numberOfItems = [self.dataSource numberOfItemsInScrollView:self];
